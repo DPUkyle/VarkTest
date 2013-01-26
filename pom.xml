@@ -4,12 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>VarkTest</groupId>
+    <groupId>com.kylemoore</groupId>
     <artifactId>VarkTest</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
+
+    <name>VarkTest</name>
+
+    <parent>
+        <groupId>org.gosu-lang.gosu</groupId>
+        <artifactId>gosu-parent</artifactId>
+        <version>0.10.1</version>
+    </parent>
 
     <repositories>
+        <!--<repository>-->
+            <!--<id>gosu-lang.org-releases</id>-->
+            <!--<name>Official Gosu website (releases)</name>-->
+            <!--<url>http://gosu-lang.org/nexus/content/groups/releases</url>-->
+        <!--</repository>-->
         <repository>
             <id>org.gosu-lang</id>
             <name>Official Gosu website (releases)</name>
@@ -31,7 +44,39 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>test</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>test</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Contains-Sources>gs, gsx, gst</Contains-Sources>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.gosu-lang</groupId>
                 <artifactId>maven-gosu-plugin</artifactId>
@@ -42,4 +87,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

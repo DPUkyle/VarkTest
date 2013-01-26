@@ -2,7 +2,7 @@ classpath "src"
 
 uses gw.vark.annotations.Target
 uses gw.lang.Param
-//uses com.kylemoore.HelloWorld
+uses com.kylemoore.HelloWorld
 
 var buildDir = file("build")
 var classesDir = buildDir.file("classes")
@@ -25,6 +25,8 @@ function targetWithArg(foo : String) {
 
 @Target
 function helloWorld() {
+  var hw = new HelloWorld()
+  Ant.echo(:message = "done.")
   //new HelloWorld()
 }
 

@@ -12,7 +12,7 @@ class HelloWorld {
   }
 
   private function init() : void {
-    logger.info("Hello world")
+    logger.info("Hello cruel world")
   }
 
 }
