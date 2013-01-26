@@ -1,7 +1,7 @@
-The Gosu plugin for IJ is cool, and IJ can manage classpath dependencies well on its own but my projects aren't perfectly portable.
+The Gosu plugin for IJ is cool, and IJ can manage classpath dependencies well on its own but my projects aren't perfectly portable and have missing JARs.
 
-The Vark build tool, howeven, can use a Maven POM to manage project dependencies.
+The Vark build tool, however, can use a Maven POM to manage project dependencies.
 
 This repo will attempt to create a simple Vark build target + a Maven POM.
 
-Essentially I'll try write a "Hello World" Gosu program, but instead of printing to the Console it will use log4j2 to create the output.
+Essentially I'll try write a "Hello World" Gosu program, but instead of printing to the Console it will use log4j2 to create the output. If Vark+Maven isn't correctly identifying the dependencies, everything will fail.
