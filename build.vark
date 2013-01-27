@@ -1,4 +1,4 @@
-classpath "src"
+classpath "com.kylemoore.VarkTest:VarkTest:1.0-SNAPSHOT"
 
 uses gw.vark.annotations.Target
 uses gw.lang.Param
@@ -23,6 +23,9 @@ function targetWithArg(foo : String) {
   Ant.echo(:message = "foo: ${foo} (${typeof foo})")
 }
 
+/**
+ * Simple hello world which instantiates a Gosu class
+ */
 @Target
 function helloWorld() {
   var hw = new HelloWorld()
