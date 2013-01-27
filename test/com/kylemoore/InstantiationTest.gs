@@ -1,10 +1,12 @@
 package com.kylemoore
 
-class InstantiationTest {
+uses junit.framework.TestCase
+
+class InstantiationTest extends TestCase {
 
   function testHelloWorld() {
     var a = new HelloWorld()
-    print(a == null ? "a is null" : "a is not null")
+    assertNotNull(a)
   }
 
 }
