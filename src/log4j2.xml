@@ -6,8 +6,8 @@
         </Console>
     </appenders>
     <loggers>
-        <root level="info">
-            <appender-ref ref="Console"/>
+        <root level="debug">
+            <appender-ref ref="Console" level="info"/> <!-- Console shows up to info, but not debug messages -->
         </root>
     </loggers>
 </configuration>
